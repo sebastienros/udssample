@@ -2,7 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost
     .UseKestrel(serverOptions => serverOptions
-        .ListenUnixSocket(Path.Combine(Path.GetTempPath(), "app2.sock")));
+        .ListenUnixSocket("/temp/app2.sock")
+);
 
 var app = builder.Build();
 
